@@ -32,17 +32,16 @@ else:
 
 # Get the top 5 values from our subreddit
 subreddit = r.get_subreddit('pythonforengineers')
-for submission in subreddit.get_hot(limit=5):
+for submission in subreddit.get_hot(limit=10):
     # print submission.title
 
     # If we haven't replied to this post before
     if submission.id not in posts_replied_to:
 
         # Do a case insensitive search
-        if re.search("i love python", submission.title, re.IGNORECASE):
+        if re.search(lineQuote, submission.title, re.IGNORECASE):
             # Reply to the post
-            submission.add_comment("Nigerian scammer bot says: It's all about the Bass (and Python)")
-            print "Bot replying to : ", submission.title
+            submission.add_comment(lineSource, submission.title
 
             # Store the current id into our list
             posts_replied_to.append(submission.id)
