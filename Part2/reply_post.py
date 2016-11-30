@@ -12,7 +12,7 @@ if not os.path.isfile("config_bot.py"):
     exit(1)
 
 # Create the Reddit instance
-user_agent = ("PyFor Eng bot 0.1")
+user_agent = ("testQuoteGetter 0.01")
 r = praw.Reddit(user_agent=user_agent)
 
 # and login
@@ -39,7 +39,7 @@ for submission in subreddit.get_hot(limit=10):
     if submission.id not in posts_replied_to:
 
         # Do a case insensitive search
-        if re.search(lineQuote, submission.title, re.IGNORECASE):
+        if re.search("!whoslineisthat", submission.title, re.IGNORECASE):
             # Reply to the post
             submission.add_comment(lineSource, submission.title
 
